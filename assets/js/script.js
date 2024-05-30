@@ -50,22 +50,22 @@ window.addEventListener('load', () => {
 });
 
 let questions = [];
+const CORRECT_BONUS = 10;
+const MAX_QUESTIONS = 5;
 
 fetch("questions.json")
-.then(res => {
-    return res.json();
-})
+.then(res =>  res.json())
 .then(loadedQuestions => {
     console.log(loadedQuestions);
     questions = loadedQuestions;
     startGame();
 })
+
 .catch(err => {
 console.log (err);
 });
 
-const CORRECT_BONUS = 10;
-const MAX_QUESTIONS = 5;
+
 
 startGame = () => {
     questionCounter = 0;
