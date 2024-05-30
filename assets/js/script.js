@@ -65,13 +65,13 @@ fetch("questions.json")
 console.log (err);
 });
 
-
-
+playGameBtn.addEventListener("click", function () {
+    startGame()
+});
 startGame = () => {
     questionCounter = 0;
     score = 0;
     availableQuestions = [...questions];
-
     getNewQuestion();
 };
 getNewQuestion = () => {
